@@ -50,9 +50,9 @@ eval "$(fzf --zsh)"
 export BAT_THEME=Nord
 
 # alias para o eza
-alias l="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=2"
-alias ll="eza --color=always --long --git --tree --level=2"
+alias l="eza --all --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --all --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=2"
+alias ll="eza --all --color=always --long --git --tree --level=2"
 
 # fzf configuration
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
