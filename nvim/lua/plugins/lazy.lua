@@ -22,5 +22,6 @@ require("lazy").setup({
   require("plugins.telescope"),
   require("plugins.file_tree"),
   -- require("plugins.markdown_preview")
-  require("plugins.toggle_comment")
+  require("plugins.toggle_comment"),
+  require("plugins.auto_pairs")
 })
