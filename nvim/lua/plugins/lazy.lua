@@ -24,5 +24,6 @@ require("lazy").setup({
   -- require("plugins.markdown_preview")
   require("plugins.toggle_comment"),
   require("plugins.auto_pairs"),
-  require("plugins.highlighted_yank")
+  require("plugins.highlighted_yank"),
+  require("plugins.git_blame")
 })
