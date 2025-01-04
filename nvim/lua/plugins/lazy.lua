@@ -23,5 +23,6 @@ require("lazy").setup({
   require("plugins.file_tree"),
   -- require("plugins.markdown_preview")
   require("plugins.toggle_comment"),
-  require("plugins.auto_pairs")
+  require("plugins.auto_pairs"),
+  require("plugins.highlighted_yank")
 })
