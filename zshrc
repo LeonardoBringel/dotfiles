@@ -77,3 +77,6 @@ _fzf_comprun() {
 
 # thefuck
 eval $(thefuck --alias)
+
+# wezterm
+alias img="wezterm imgcat --width '50%'"
