@@ -19,45 +19,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- automatically check for plugin updates
   -- checker = { enabled = true },
-  { 
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
-  {
-    "nvim-tree/nvim-tree.lua",
-    version="*",
-    lazy=false,
-    requires={
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("nvim-tree").setup {
-        sort = {
-          sorter = "case_sensitive",
-        },
-        view = {
-          width = 30,
-        },
-        renderer = {
-          group_empty = true,
-        },
-        filters = {
-          dotfiles = true,
-        }
-      }
-    end
-  },
-  --{
-  --  "iamcco/markdown-preview.nvim",
-  --  cmd = { "MarkdownPreviewToggle" },
-  --  ft = { "markdown" },
-  --  build = function() vim.fn["mkdp#util#install"]() end,
-  --},
-  {
-    'terrortylor/nvim-comment',
-    config = function()
-      require('nvim_comment').setup({ create_mappings = false })
-    end
-  },
+  require("telescope"),
+  require("file_tree"),
+  -- require("markdown_preview")
+  require("toggle_comment")
 })
