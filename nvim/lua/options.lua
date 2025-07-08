@@ -62,5 +62,8 @@ vim.cmd [[
   highlight NonText ctermbg=none
 ]]
 
+-- Reserve a space in the gutter. This will avoid an annoying layout shift in the screen
+vim.opt.signcolumn = 'yes'
+
 -- Disable swap files
 vim.opt.swapfile = false
