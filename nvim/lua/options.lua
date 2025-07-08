@@ -61,3 +61,6 @@ vim.cmd [[
   highlight Normal ctermbg=none
   highlight NonText ctermbg=none
 ]]
+
+-- Disable swap files
+vim.opt.swapfile = false
