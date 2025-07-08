@@ -25,5 +25,8 @@ require("lazy").setup({
   require("plugins.toggle_comment"),
   require("plugins.auto_pairs"),
   require("plugins.highlighted_yank"),
-  require("plugins.git_blame")
+  require("plugins.git_blame"),
+  require("plugins.lsp_completion_engine"),
+  require("plugins.lsp_completion_source"),
+  require("plugins.lsp_config")
 })
