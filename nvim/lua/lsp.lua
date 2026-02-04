@@ -3,5 +3,7 @@
 vim.lsp.config('lua_ls', {})
 
 -- Python LSP
--- install pip install pyright
+-- pip (or pipx) install pyright
 vim.lsp.config('pyright', {})
+
+vim.lsp.enable({ 'pyright', 'lua_ls' })
