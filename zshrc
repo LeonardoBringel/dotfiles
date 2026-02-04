@@ -40,9 +40,6 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-# To customize prompt, run `p10k configure` or edit ~/Documents/dotfiles/p10k.zsh.
-[[ ! -f ~/Documents/dotfiles/p10k.zsh ]] || source ~/Documents/dotfiles/p10k.zsh
-
 # fzf
 eval "$(fzf --zsh)"
 
@@ -51,7 +48,7 @@ export BAT_THEME=Nord
 
 # alias para o eza
 alias l="eza --all --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias ls="eza --all --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=2"
+# alias ls="eza --all --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=2"
 alias ll="eza --all --color=always --long --git --tree --level=2"
 
 # fzf configuration
@@ -80,3 +77,6 @@ eval $(thefuck --alias)
 
 # wezterm
 alias img="wezterm imgcat --width '50%'"
+
+# postgres
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
