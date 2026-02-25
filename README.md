@@ -1,11 +1,9 @@
 
 ## Keymaps
----
 - Leader keys should be used combined with the defined keymap of each action. Leader keys are defined in the first line of each keymap of this documentation.
 - Keymaps are case-sensitive.
 
 ### Terminal
----
 - History search backward
 ```
 COMMAND + UpArrow
@@ -32,7 +30,6 @@ lll
 ```
 
 ### Wezterm
----
 - Wezterm LEADER key
 ```
 OPTION + w
@@ -107,7 +104,6 @@ LEADER + SHIFT + DownArrow
 ```
 
 ### NeoVim
----
 - NeoVim LEADER key
 ```
 ' '
