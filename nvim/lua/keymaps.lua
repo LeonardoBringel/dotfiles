@@ -8,13 +8,15 @@ vim.keymap.set("n", "<leader>q", ":q<cr>")
 -- vim.keymap.set("n", "<leader>x", ":x<cr>")
 
 -- buffer
-vim.keymap.set('n', '<leader>n', ':bn<cr>')
-vim.keymap.set('n', '<leader>p', ':bp<cr>')
-vim.keymap.set('n', '<leader>x', ':bd<cr>')
+-- vim.keymap.set('n', '<leader>n', ':bn<cr>')
+-- vim.keymap.set('n', '<leader>p', ':bp<cr>')
+-- vim.keymap.set('n', '<leader>x', ':bd<cr>')
 
 -- Center the screen on the next/prev search result with n/N
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- Center the screen when navigating bottom/up
 vim.keymap.set("n", "{", "{zzzv")
 vim.keymap.set("n", "}", "}zzzv")
 
