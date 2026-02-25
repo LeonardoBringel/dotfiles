@@ -26,7 +26,7 @@ l
 
 - eza tree (2 levels)
 ```
-lll
+ll
 ```
 
 ### Wezterm
