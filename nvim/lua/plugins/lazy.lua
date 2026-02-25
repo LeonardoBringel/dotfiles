@@ -21,7 +21,6 @@ require("lazy").setup({
   checker = { enabled = true },
   require("plugins.telescope"),
   require("plugins.file_tree"),
-  -- require("plugins.markdown_preview")
   require("plugins.toggle_comment"),
   require("plugins.auto_pairs"),
   require("plugins.highlighted_yank"),
