@@ -28,11 +28,6 @@ config.keys = {
     },
     {
         mods = "LEADER",
-        key = "x",
-        action = wezterm.action.CloseCurrentPane { confirm = true }
-    },
-    {
-        mods = "LEADER",
         key = "N",
         action = wezterm.action.ActivateTabRelative(-1)
     },
