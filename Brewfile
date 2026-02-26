@@ -1,0 +1,17 @@
+tap "homebrew/services"
+brew "bat"
+brew "eza"
+brew "fzf"
+brew "lua-language-server"
+brew "utf8proc", args: ["HEAD"]
+brew "neovim"
+brew "postgresql@18", restart_service: :changed
+brew "powerlevel10k"
+brew "ripgrep"
+brew "thefuck"
+brew "uv"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+cask "bruno"
+cask "font-iosevka-nerd-font"
+cask "wezterm"
