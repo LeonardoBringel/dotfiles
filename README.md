@@ -1,3 +1,15 @@
+## Setup
+
+### Install Packages
+- Packages are installed using `brew` package manager. To setup a new environment run:
+```
+brew bundle --file=Brewfile
+```
+
+- If you wish to update the packages list, recreate the `Brewfile` with the following command:
+```
+brew bundle dump --force
+```
 
 ## Keymaps
 - Leader keys should be used combined with the defined keymap of each action. Leader keys are defined in the first line of each keymap of this documentation.
