@@ -46,3 +46,11 @@ vim.opt.signcolumn = 'yes'
 
 -- Disable swap files
 vim.opt.swapfile = false
+
+-- Enable spell check only for text-oriented filetypes
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'markdown', 'text', 'gitcommit' },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
