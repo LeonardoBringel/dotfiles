@@ -1,1 +1,1 @@
-vim.keymap.set({"n", "v"}, "<leader>/", "<cmd>CommentToggle<cr>")
+vim.keymap.set({"n", "v"}, "<leader>/", "<cmd>CommentToggle<cr>", { desc = "Toggle comment" })
