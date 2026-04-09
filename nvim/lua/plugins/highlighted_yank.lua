@@ -1,10 +1,6 @@
-return {
-  "machakann/vim-highlightedyank",
-  event = "TextYankPost",
-  config = function()
-    vim.cmd [[
-      hi HighlightedyankRegion cterm=reverse gui=reverse
-      let g:highlightedyank_highlight_duration = 300
-    ]]
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight yanked text',
+  callback = function()
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 300 })
   end,
-}
+})
