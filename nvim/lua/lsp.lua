@@ -4,7 +4,17 @@ vim.lsp.config('*', {
 })
 
 -- brew install lua-language-server
-vim.lsp.config('lua_ls', {})
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      runtime = { version = 'LuaJIT' },
+      workspace = {
+        checkThirdParty = false,
+        library = vim.api.nvim_get_runtime_file('', true),
+      },
+    },
+  },
+})
 
 -- brew install pyright
 vim.lsp.config('pyright', {})
