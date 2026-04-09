@@ -13,17 +13,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local cmp = require('cmp')
-cmp.setup({
-  sources = {
-    { name = 'nvim_lsp' },
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({ select = false }),
-  }),
-  snippet = {
-    expand = function(args)
-      vim.snippet.expand(args.body)
-    end,
-  },
-})
