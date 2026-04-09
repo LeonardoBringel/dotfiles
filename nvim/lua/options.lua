@@ -4,9 +4,6 @@ vim.opt.clipboard = 'unnamedplus'
 -- Modify the auto-complete menu to behave more like an IDE
 vim.opt.completeopt = {'noinsert', 'menuone', 'noselect'}
 
--- Hide unused buffers
-vim.opt.hidden = true
-
 -- Enable auto-indentation for new lines
 vim.opt.autoindent = true
 
@@ -23,24 +20,6 @@ vim.opt.splitright = true
 
 -- Show the file title in the editor
 vim.opt.title = true
-
--- Enable the advanced command-line menu
-vim.opt.wildmenu = true
-
--- Enable filetype-specific plugins and auto-indentation
-vim.cmd('filetype plugin indent on')
-
--- Enable syntax highlighting
-vim.cmd('syntax on')
-
--- Enable spell checking
-vim.opt.spell = true
-
--- Speed up scrolling
-vim.opt.ttyfast = true
-
--- Set directory for swap files
-vim.opt.directory = '.'
 
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
