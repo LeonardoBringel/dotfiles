@@ -7,6 +7,7 @@ brew "utf8proc", args: ["HEAD"]
 brew "neovim"
 brew "postgresql@18", restart_service: :changed
 brew "powerlevel10k"
+brew "pyright"
 brew "ripgrep"
 brew "thefuck"
 brew "uv"
