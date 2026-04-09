@@ -2,8 +2,8 @@
 vim.g.mapleader = " "
 
 -- shortcuts to w, q, x
-vim.keymap.set("n", "<leader>w", ":w<cr>")
-vim.keymap.set("n", "<leader>q", ":q<cr>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
 -- vim.keymap.set("n", "<leader>q!", ":q!<cr>")
 -- vim.keymap.set("n", "<leader>x", ":x<cr>")
 
@@ -21,7 +21,7 @@ vim.keymap.set("n", "{", "{zzzv")
 vim.keymap.set("n", "}", "}zzzv")
 
 -- unhilight
-vim.keymap.set("n", "<leader>h", ":noh<cr>")
+vim.keymap.set("n", "<leader>h", "<cmd>noh<cr>")
 
 -- move a blocks of text up/down with K/J in visual mode
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
