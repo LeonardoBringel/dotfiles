@@ -5,10 +5,6 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-
-# Created by `pipx` on 2024-07-23 19:12:39
-export PATH="$PATH:/Users/leonardobringel/.local/bin"
-
 # powerlevel10k
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
