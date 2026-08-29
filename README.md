@@ -11,6 +11,27 @@ brew bundle --file=Brewfile
 brew bundle dump --force
 ```
 
+### Create Symbolic links
+- Claude Code Global Instructions
+```
+ln -s ./global-claude.md ~/.claude/CLAUDE.md
+```
+
+- P10K
+```
+ln -s ./p10k.zsh ~/.p10k.zsh
+```
+
+- Wezterm
+```
+ln -s ./wezterm.lua ~/.wezterm.lua
+```
+
+- ZSH
+```
+ln -s ./zshrc ~/.zshrc
+```
+
 ## Keymaps
 - Leader keys should be used combined with the defined keymap of each action. Leader keys are defined in the first line of each keymap of this documentation.
 - Keymaps are case-sensitive.
