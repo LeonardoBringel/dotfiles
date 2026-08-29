@@ -28,6 +28,11 @@ config.keys = {
     },
     {
         mods = "LEADER",
+        key = "s",
+        action = wezterm.action.QuickSelect,
+    },
+    {
+        mods = "LEADER",
         key = "N",
         action = wezterm.action.ActivateTabRelative(-1)
     },
@@ -87,6 +92,89 @@ config.keys = {
         action = wezterm.action.AdjustPaneSize { "Up", 5 }
     },
 }
+
+-- disable default assignments we don't use, so the keys fall through to the
+-- shell/nvim instead of being swallowed by wezterm
+local disabled_defaults = {
+    -- ToggleFullScreen (macOS' own CTRL+COMMAND+F is a system shortcut and
+    -- cannot be disabled from here)
+    { mods = "ALT", key = "Enter" },
+
+    -- IncreaseFontSize / DecreaseFontSize / ResetFontSize, every default variant.
+    -- This also hands CTRL+- and CTRL+_ back to readline (undo).
+    { mods = "SUPER", key = "=" },
+    { mods = "SUPER", key = "-" },
+    { mods = "SUPER", key = "0" },
+    { mods = "CTRL", key = "=" },
+    { mods = "CTRL", key = "+" },
+    { mods = "CTRL", key = "-" },
+    { mods = "CTRL", key = "_" },
+    { mods = "CTRL", key = "0" },
+    { mods = "CTRL", key = ")" },
+    { mods = "SHIFT|CTRL", key = "=" },
+    { mods = "SHIFT|CTRL", key = "+" },
+    { mods = "SHIFT|CTRL", key = "-" },
+    { mods = "SHIFT|CTRL", key = "_" },
+    { mods = "SHIFT|CTRL", key = "0" },
+    { mods = "SHIFT|CTRL", key = ")" },
+
+    -- ActivateTabRelative on COMMAND+SHIFT+[ / ]. Shift+[ emits "{", so wezterm
+    -- registers the same physical combo under several spellings; kill them all.
+    { mods = "SHIFT|SUPER", key = "[" },
+    { mods = "SHIFT|SUPER", key = "]" },
+    { mods = "SUPER", key = "{" },
+    { mods = "SUPER", key = "}" },
+    { mods = "SHIFT|SUPER", key = "{" },
+    { mods = "SHIFT|SUPER", key = "}" },
+
+    -- the remaining ActivateTabRelative defaults, so LEADER+n / LEADER+N are the
+    -- only way to move between tabs
+    { mods = "CTRL", key = "Tab" },
+    { mods = "SHIFT|CTRL", key = "Tab" },
+    { mods = "CTRL", key = "PageUp" },
+    { mods = "CTRL", key = "PageDown" },
+
+    -- Hide (minimize) and HideApplication, every spelling. Only the shifted
+    -- letters are bound, so plain CTRL+h / CTRL+m stay untouched -- terminals
+    -- send those as Backspace and Return.
+    { mods = "SUPER", key = "m" },
+    { mods = "SUPER", key = "h" },
+    { mods = "CTRL", key = "M" },
+    { mods = "CTRL", key = "H" },
+    { mods = "SHIFT|CTRL", key = "M" },
+    { mods = "SHIFT|CTRL", key = "H" },
+    { mods = "SHIFT|CTRL", key = "m" },
+    { mods = "SHIFT|CTRL", key = "h" },
+}
+
+for _, binding in ipairs(disabled_defaults) do
+    table.insert(config.keys, {
+        mods = binding.mods,
+        key = binding.key,
+        action = wezterm.action.DisableDefaultAssignment,
+    })
+end
+
+-- ActivateTab by index (COMMAND + 1..9), so tabs are only reachable via LEADER
+for i = 1, 9 do
+    table.insert(config.keys, {
+        mods = "SUPER",
+        key = tostring(i),
+        action = wezterm.action.DisableDefaultAssignment,
+    })
+end
+
+-- pane focus/resize on CONTROL+SHIFT+arrows and CONTROL+OPTION+SHIFT+arrows,
+-- which duplicate LEADER+arrows and LEADER+SHIFT+arrows
+for _, arrow in ipairs({ "LeftArrow", "RightArrow", "UpArrow", "DownArrow" }) do
+    for _, mods in ipairs({ "SHIFT|CTRL", "SHIFT|ALT|CTRL" }) do
+        table.insert(config.keys, {
+            mods = mods,
+            key = arrow,
+            action = wezterm.action.DisableDefaultAssignment,
+        })
+    end
+end
 
 -- center new window
 wezterm.on("gui-startup", function(cmd)
