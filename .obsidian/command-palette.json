@@ -1,0 +1,12 @@
+{
+  "pinned": [
+    "omnisearch:show-modal",
+    "omnisearch:show-modal-infile",
+    "workspace:export-pdf",
+    "app:open-settings",
+    "file-explorer:new-file",
+    "file-explorer:new-folder",
+    "file-recovery:open",
+    "editor:insert-table"
+  ]
+}
