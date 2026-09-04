@@ -106,6 +106,7 @@ Verified against `wezterm show-keys`.
 | New window | `COMMAND + n` |
 | New tab | `COMMAND + t` |
 | Close tab / pane (asks to confirm) | `COMMAND + w` |
+| Go to tab 1–6 | `COMMAND + 1` … `COMMAND + 6` |
 | Search scrollback | `COMMAND + f` |
 | Clear scrollback | `COMMAND + k` |
 | Command palette | `CONTROL + SHIFT + p` |
@@ -222,7 +223,6 @@ language server (`lua_ls`, `pyright`).
 | --- | --- | --- |
 | Hover documentation | `LEADER` → `SPACE` (Space Space) | Normal |
 | Go to declaration | `g` → `SHIFT + d` | Normal |
-| Go to type definition | `g` → `o` | Normal |
 | List references | `g` → `r` | Normal |
 | Signature help | `g` → `s` | Normal |
 | Rename symbol | `LEADER` → `r` → `r` | Normal |
@@ -244,15 +244,13 @@ Inside the Telescope picker (defaults):
 
 | Action | Keys |
 | --- | --- |
-| Next / previous result | `CONTROL + n` / `CONTROL + p` (or `↓` / `↑`) |
+| Next / previous result | `↓` / `↑` |
 | Open selection | `RETURN` |
 | Open in horizontal split | `CONTROL + x` |
 | Open in vertical split | `CONTROL + v` |
 | Open in a new tab | `CONTROL + t` |
 | Scroll preview down / up | `CONTROL + d` / `CONTROL + u` |
 | Toggle multi-selection | `TAB` / `SHIFT + TAB` |
-| Send to quickfix list | `OPTION + q` |
-| Which-key help for the picker | `CONTROL + /` |
 | Close picker | `ESC` or `CONTROL + c` |
 
 ### File tree (nvim-tree)
@@ -267,10 +265,7 @@ Inside the tree buffer (defaults):
 
 | Action | Keys |
 | --- | --- |
-| Show all mappings (help) | `g` → `?` |
 | Open file / expand folder | `RETURN` or `o` |
-| Open in vertical split | `CONTROL + v` |
-| Open in horizontal split | `CONTROL + x` |
 | Open in a new tab | `CONTROL + t` |
 | Preview file without leaving the tree | `TAB` |
 | Go to parent directory | `SHIFT + p` |
@@ -295,7 +290,8 @@ Source: [nvim/lua/plugins/keymaps/toggle_comment_keymaps.lua](nvim/lua/plugins/k
 
 | Action | Keys | Mode |
 | --- | --- | --- |
-| Toggle comment on line / selection | `LEADER` → `/` | Normal, Visual |
+| Toggle comment on line | `LEADER` → `/` | Normal |
+| Toggle comment on selection | `LEADER` → `/` | Visual |
 
 > The plugin's own default mappings are disabled (`create_mappings = false`), so `LEADER + /`
 > is the only entry point.
