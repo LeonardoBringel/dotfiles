@@ -155,8 +155,10 @@ for _, binding in ipairs(disabled_defaults) do
     })
 end
 
--- ActivateTab by index (COMMAND + 1..9), so tabs are only reachable via LEADER
-for i = 1, 9 do
+-- ActivateTab by index: COMMAND + 1..6 stays enabled (default) for quick tab
+-- navigation; COMMAND + 7..9 stays disabled, so tabs beyond 6 are only
+-- reachable via LEADER
+for i = 7, 9 do
     table.insert(config.keys, {
         mods = "SUPER",
         key = tostring(i),
