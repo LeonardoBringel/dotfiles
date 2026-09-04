@@ -12,9 +12,11 @@ brew bundle dump --force
 ```
 
 ### Create Symbolic links
-- Claude Code Global Instructions
+- Claude Code Global Instructions and Settings
 ```
 ln -s ./global-claude.md ~/.claude/CLAUDE.md
+
+ln -s ./claude-settings.json ~/.claude/settings.json
 ```
 
 - P10K
